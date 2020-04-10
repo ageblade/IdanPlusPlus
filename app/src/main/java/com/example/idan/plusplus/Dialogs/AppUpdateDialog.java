@@ -16,6 +16,7 @@ import androidx.leanback.widget.GuidanceStylist;
 import androidx.leanback.widget.GuidedAction;
 
 import com.example.idan.plusplus.R;
+import com.example.idan.plusplus.Utils;
 import com.example.idan.plusplus.V2.App.WebapiSingleton;
 
 import java.io.File;
@@ -58,7 +59,7 @@ public class AppUpdateDialog extends GuidedStepSupportFragment {
     @Override
     public void onGuidedActionClicked(GuidedAction action) {
         if (ACTION_ID_POSITIVE == action.getId()) {
-            if (WebapiSingleton.isTv) {
+            if (Utils.getIsTv()) {
                 final Uri uri = FileProvider.getUriForFile(getContext(), getActivity().getPackageName()+".updateProvider", file);
                 try {
                     Intent install = new Intent(Intent.ACTION_INSTALL_PACKAGE);
@@ -104,7 +105,7 @@ public class AppUpdateDialog extends GuidedStepSupportFragment {
         } else {
 
         }
-        if (WebapiSingleton.isTv)
+        if (Utils.getIsTv())
             System.exit(-1);
         else
             System.exit(0);

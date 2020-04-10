@@ -69,7 +69,6 @@ import java.util.Timer;
 public class MainFragment extends BrowseSupportFragment {
     private MainFragment mThis = this;
     private ArrayObjectAdapter mCategoryRowAdapter;
-    private Drawable mDefaultBackground;
     private DisplayMetrics mMetrics;
     private Timer mBackgroundTimer;
     private BackgroundManager mBackgroundManager;
@@ -228,7 +227,6 @@ public class MainFragment extends BrowseSupportFragment {
 
     private void prepareBackgroundManager() {
         mBackgroundManager = BackgroundManager.getInstance(Objects.requireNonNull(getActivity()));
-        mDefaultBackground = getResources().getDrawable(R.drawable.default_background, null);
         mMetrics = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(mMetrics);
     }

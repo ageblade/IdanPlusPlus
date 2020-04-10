@@ -79,6 +79,7 @@ public class Utils {
     private static final int CHANNEL_33 = 33;
 
     private static Context mApplicationContext;
+    private static Boolean mIsTv;
 
     public static int getVersionCode(Context context) {
         PackageManager pm = context.getPackageManager();
@@ -151,9 +152,14 @@ public class Utils {
     public static Context getAppContext() {
         return  mApplicationContext;
     }
-
     public static void setAppContext(Context app) {
         mApplicationContext = app;
+    }
+    public static Boolean getIsTv() {
+        return mIsTv;
+    }
+    public static void setIsTv(Boolean isTv) {
+        mIsTv = isTv;
     }
 
     //DONE V2

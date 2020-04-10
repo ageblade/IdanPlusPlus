@@ -122,7 +122,7 @@ public class GetUpdateAppAsyncTask extends AsyncTask<Void,Integer,List<Object>> 
 
 //                Response<ResponseBody> appUrlResponse = updateSoftwareService.getHtml(getAppUrl).execute();
                 File file = null;
-                if (WebapiSingleton.isTv) {
+                if (Utils.getIsTv()) {
                     File outputDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
                     try {
                         file = new File(outputDir, "idanplusplus.apk");

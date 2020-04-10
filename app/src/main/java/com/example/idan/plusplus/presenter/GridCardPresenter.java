@@ -122,8 +122,6 @@ public class GridCardPresenter extends Presenter {
         private PopupMenu mPopupMenu;
         private FragmentActivity mFragmentActivity;
         private LifecycleOwner mOwner;
-        private RequestOptions mDefaultPlaceHolder;
-        private Drawable mDefaultBackground;
 
         private ImageCardView mCardView;
 
@@ -132,11 +130,6 @@ public class GridCardPresenter extends Presenter {
             mContext = context;
 
             mOwner = (LifecycleOwner) mContext;
-
-            mDefaultBackground = mContext.getResources().getDrawable(R.drawable.default_background, null);
-            mDefaultPlaceHolder = new RequestOptions().
-                    placeholder(mDefaultBackground);
-
             mCardView = (ImageCardView) GridCardPresenter.GridCardViewHolder.this.view;
             Resources resources = mCardView.getContext().getResources();
             mCardView.setMainImageDimensions(Math.round(

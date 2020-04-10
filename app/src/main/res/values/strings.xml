@@ -3,23 +3,9 @@
     <string name="app_name"><![CDATA[Idan Plus Plus]]></string>
     <string name="browse_title"><![CDATA[Idan Plus Plus]]></string>
 
-    <!-- Error messages -->
+    <string name="dobule_press_back">Press back again to exit</string>
 
-    <!-- Global Search -->
-    <!-- The action label for global search_vod -->
-
-    <!-- The label for use as a searchable item -->
-
-    <!-- The hint text that appears in the search_vod box. -->
-
-    <!-- The description that will show up in the search_vod settings for this source.  -->
-
-    <!-- Strings related to guided sequence activity -->
     <string name="header_icon">Header icon</string>
-
-    <!-- Strings related to onboarding -->
-
-
     <string name="playback_tag">PLAYBACK_TAG</string>
     <string name="ISRAEL_LIVE_CHANNELS_CATEGORY">Israel Live Channels</string>
     <string name="ISRAEL_RADIO_CHANNELS_CATEGORY">Live Israel Radio Channels</string>
@@ -35,13 +21,14 @@
     <string name="CHANNEL_MAKAN_DESC">Channel 33</string>
     <string name="CHANNEL_KNESSET_TITLE">Channel Knesset</string>
     <string name="CHANNEL_KNESSET_DESC">Channel Knesset</string>
-    <string name="BACK_EXIT">Please click BACK again to exit</string>
     <string name="UPDATE_DIALOG_TITLE">New Version found</string>
     <string name="UPDATE_DIALOG_DESCRIPTION">Update new sotfware avialable From Version: %1$s To Version: %2$s</string>
     <string name="UPDATE_DIALOG_BTN_UPDATE">Update</string>
     <string name="UPDATE_DIALOG_BTN_CANCEL">Not now</string>
     <string name="BTN_GOTIT">Got it!!</string>
     <string name="UPDAE_ERROR_MSESSAGE_TITLE">Unexpected error please try again a few moments.</string>
+    <string name="CHECK_UPDATE_MSG">Searching for update</string>
+    <string name="UPDATE_PROGRESS_MESSAGE">Downloading update...</string>
     <string name="ENGLISH_DISCLAMIER">Disclaimer / clarification\n
         This is an experimental project for educational purposes only and it DOES NOT host or stream any content and is not the initial source of the links.\n
         Its purpose is to gather available sourcs from the internet and offer an interface that is usable form on non touch screens. All links can be found in other sources.\n
@@ -68,7 +55,4 @@
 </p>
         ]]>
     </string>
-
-    <string name="CHECK_UPDATE_MSG">Searching for update</string>
-    <string name="UPDATE_PROGRESS_MESSAGE">Downloading update...</string>
 </resources>

@@ -39,7 +39,6 @@ public class WebapiSingleton {
     public static boolean isInPicInPic;
     private static IBaseService generalService;
     private static IChannell12Service chanell12Service;
-    public static boolean isTv;
 
 
     private static void initCookieJar(Boolean clearCookies) {
