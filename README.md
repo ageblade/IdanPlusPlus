@@ -1,3 +1,3 @@
-# IdanPlusPlus
-Initial source code for Idan++ Android apk.
-please feel free to use this and fork it and use it as you like.
+# IdanPlusPlus - Lahav Edition
+
+This is an improved version based on the initial source code for Idan++
