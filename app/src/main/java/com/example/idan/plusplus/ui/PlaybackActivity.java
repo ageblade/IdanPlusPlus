@@ -33,7 +33,6 @@ import com.example.idan.plusplus.R;
  */
 public class PlaybackActivity extends LeanbackActivity {
     private static final float GAMEPAD_TRIGGER_INTENSITY_ON = 0.5f;
-    // Off-condition slightly smaller for button debouncing.
     private static final float GAMEPAD_TRIGGER_INTENSITY_OFF = 0.45f;
     private boolean gamepadTriggerPressed = false;
     private PlaybackFragment mPlaybackFragment;

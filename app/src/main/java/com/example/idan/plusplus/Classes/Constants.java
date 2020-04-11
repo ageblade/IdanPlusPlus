@@ -5,7 +5,6 @@ public class Constants {
     public static final String TYPE_ISRAEL_LIVE_RADIO_CHANNEL = "ISRAEL_LIVE_RADIO_CHANNEL";
     public static final String PARCEL_GRID_ITEM = "PARCEL_GRID_ITEM";
     public static final String LOAD_LIVE_CHANNELS = "LoadLiveChannels";
-    public static final int PERMISSION_REQUEST = 112;
     public static final String TYPE_SERIES = "SERIES";
     public static final String TYPE_MOVIES = "MOVIES";
     public static final String TYPE_MUSIC = "MUSIC";

@@ -1,19 +1,3 @@
-/*
- * Copyright (C) 2017 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.example.idan.plusplus.ui;
 
 import android.annotation.TargetApi;
@@ -78,7 +62,6 @@ import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
 import com.google.android.exoplayer2.trackselection.MappingTrackSelector;
 import com.google.android.exoplayer2.trackselection.TrackSelection;
 import com.google.android.exoplayer2.trackselection.TrackSelector;
-import com.google.android.exoplayer2.ui.SubtitleView;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
 
 import java.util.ArrayList;
@@ -94,8 +77,6 @@ import static com.google.android.exoplayer2.DefaultRenderersFactory.EXTENSION_RE
 import static com.google.android.exoplayer2.extractor.ts.DefaultTsPayloadReaderFactory.FLAG_ALLOW_NON_IDR_KEYFRAMES;
 import static com.google.android.exoplayer2.extractor.ts.DefaultTsPayloadReaderFactory.FLAG_DETECT_ACCESS_UNITS;
 
-//import com.gauravk.audiovisualizer.visualizer.BlastVisualizer;
-
 /**
  * Plays selected video, loads playlist and related videos, and delegates playback to {@link
  * VideoPlayerGlue}.
@@ -106,12 +87,10 @@ public class PlaybackFragment extends VideoSupportFragmentExt {
     private VideoPlayerGlue mPlayerGlue;
     private LeanbackPlayerAdapter mPlayerAdapter;
     private SimpleExoPlayer mPlayer;
-    // private SimpleExoPlayer mExoPlayer;
     private TrackSelector mTrackSelector;
     private PlaylistActionListener mPlaylistActionListener;
     private VideoPlayerGlue.OnPlayerStateChangedListener mOnPlayerStateChangedListener;
     private ArrayObjectAdapter mRowsAdapter;
-    //private Video mVideo;
     private GridItem mGridItem;
     private Playlist mPlaylist;
     private VideoLoaderCallbacks mVideoLoaderCallbacks;
@@ -119,14 +98,12 @@ public class PlaybackFragment extends VideoSupportFragmentExt {
     private boolean loadLiveChannels = true;
     private boolean isScaleUp = true;
     private boolean firstTimeLoad = true;
-    private DefaultRenderersFactory mDefaultRenderers;
     private PackageManager packageManager;
     private int oldState;
     private FrameLayout mMediaFrameLayout;
     private Boolean showCast = true;
     private BarVisualizer mVisualizer;
     private int sessionId = 0;
-    private SubtitleView subtitleView;
     private ConcatenatingMediaSource mConcatenatingMediaSource;
 
     @Override
@@ -175,34 +152,22 @@ public class PlaybackFragment extends VideoSupportFragmentExt {
         mVideoLoaderCallbacks = new VideoLoaderCallbacks(mPlaylist);
     }
 
-
-
-
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         try {
-            subtitleView = getActivity().findViewById(R.id.exo_subtitles);
             mMediaFrameLayout = getActivity().findViewById(R.id.exo_fullscreen_button);
             if (mMediaFrameLayout != null)
                 mMediaFrameLayout.setVisibility(View.GONE);
-
         } catch (Exception e) {
             mMediaFrameLayout = null;
         }
-
     }
-
-
-
-
 
     @Override
     public void onStart() {
         super.onStart();
-        //if (Util.SDK_INT > 23 || android.os.Build.MODEL.contains("AFT")) {
         initializePlayer();
-        //}
     }
 
     @Override
@@ -270,9 +235,7 @@ public class PlaybackFragment extends VideoSupportFragmentExt {
     @Override
     public void onStop() {
         super.onStop();
-        //if (Util.SDK_INT > 23 || android.os.Build.MODEL.contains("AFT")) {
         releasePlayer();
-        //}
     }
 
     @Override
@@ -284,7 +247,6 @@ public class PlaybackFragment extends VideoSupportFragmentExt {
     }
 
     private void initializePlayer() {
-
         okHttpClient = com.example.idan.plusplus.V2.App.WebapiSingleton.getOkHttpClientV2();// WebapiSingleton.okHttpClient;
         DefaultRenderersFactory rf = new DefaultRenderersFactory(getContext());
         rf.setExtensionRendererMode(EXTENSION_RENDERER_MODE_PREFER);

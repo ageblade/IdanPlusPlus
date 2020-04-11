@@ -16,16 +16,12 @@ import io.reactivex.ObservableSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 
 public class Channell11 extends BaseAbstractService {
-
-    private int pageNumber = 0;
-    private GridItem localGridItem;
     private String baseUrl = "https://www.kan.org.il/";
 
     public Channell11(SharedPreferences sharedPreferences,OnAsyncTaskLoadCompletes completesCallback) {
         super(sharedPreferences,completesCallback);
     }
 
-    //region Live Channell 11
     public void getLiveChannell11(FragmentActivity fragmentActivity,int rootFragment,GridItem gridItem, OnAsyncTaskLoadCompletes<GridItem> callback) {
         freshStartChannell();
         setCurrentGridItem(gridItem);
@@ -40,9 +36,6 @@ public class Channell11 extends BaseAbstractService {
                 .subscribe(onSubscribeString);
     }
 
-    //endregion
-
-    //region Live Channell 23
     public void getLiveChannell23(FragmentActivity fragmentActivity,int rootFragment,GridItem gridItem, OnAsyncTaskLoadCompletes<GridItem> callback) {
         freshStartChannell();
         setCurrentGridItem(gridItem);
@@ -57,9 +50,6 @@ public class Channell11 extends BaseAbstractService {
                 .subscribe(onSubscribeString);
     }
 
-    //endregion
-
-    //region Live Channell 33
     public void getLiveChannell33(FragmentActivity fragmentActivity,int rootFragment,GridItem gridItem, OnAsyncTaskLoadCompletes<GridItem> callback) {
         freshStartChannell();
         setCurrentGridItem(gridItem);
@@ -73,24 +63,7 @@ public class Channell11 extends BaseAbstractService {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(onSubscribeString);
     }
-    //endregion
 
-    //region get Live link
-    public void getKanLink(FragmentActivity fragmentActivity,int rootFragment,GridItem gridItem, OnAsyncTaskLoadCompletes<GridItem> callback) {
-        freshStartChannell();
-        setCurrentGridItem(gridItem);
-        setFragmentActivity(fragmentActivity);
-        setFinalVideoLinkCallback(callback);
-        startSpinner(fragmentActivity,rootFragment);
-        getHtmlFromUrl(gridItem.linkUrl,false)
-                .flatMap(this::getLiveChannel1Next1)
-                .flatMap(t2 -> getFinalFromM3u8(t2,getFinalUrl()))
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(onSubscribeString);
-    }
-    //endregion
-
-    //region Shared Live Channell Methods
     private ObservableSource<String> getLiveChannel1Next1(String t1) {
         if (t1.isEmpty()) return emptyReturn;
         String firstReg = "bynetURL:\\s*\"(.*?)\"";
@@ -117,5 +90,4 @@ public class Channell11 extends BaseAbstractService {
         }
         return getHtmlFromUrl(link,false);
     }
-    //endregion
 }

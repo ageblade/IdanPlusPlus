@@ -1,19 +1,3 @@
-/*
- * Copyright (c) 2015 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.example.idan.plusplus;
 
 import android.content.Context;
@@ -63,10 +47,6 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-
-/**
- * A collection of utility methods, all static.
- */
 public class Utils {
 
     private static final int CHANNEL_11 = 11;
@@ -187,7 +167,6 @@ public class Utils {
                 break;
         }
     }
-
 
     public static void proccessIsraelRadioChannel(FragmentActivity activity, int main_fragment, GridItem gridItem) {
         switch (gridItem.channelTag) {
@@ -670,32 +649,12 @@ public class Utils {
         return getBase64StringNew("4WYiZNjTVVCJY+KBNQH1EQ==:iKNeSmpPs09/NUm9+VYRrB2w7FKFhbfxQknDLL4abDw=:SezefOoaf/COoeia0hDBlgP1JdkpGYtOKnwF4IrBNM9MKZIXw9s8DJ2Ye0x4ZR9T",Base64.NO_WRAP);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public static void openPlayBackAcitivty(FragmentActivity activity,GridItem gridItem, boolean loadLiveChannels) {
         Intent intent = new Intent(activity, PlaybackActivity.class);
         intent.putExtra(Constants.PARCEL_GRID_ITEM, gridItem);
         intent.putExtra(Constants.LOAD_LIVE_CHANNELS,loadLiveChannels);
         activity.startActivity(intent);
     }
-
 
     private static String getChannel12RealUrl() {
         return getBase64StringNew("R7dRYHwvSQ7a32VL6F7atg==:hsZLVp6AYKzpRDBTbmpuZkrqvuQrGL4H2fcteAFb7f4=:zhCFhOuRXKHGacIiHwori+Ownavyv8cRpkLjkZsr94QLREVXEZNAj0wDMzt1zDPOV4fgch3YvHA9oc89Vw1casmDDGF7Z106HxX8fNKtLKR4b/SjVsUROzLL+5MRN5+5gdYTeqF05HX6QCVvMMhG5Q==",Base64.NO_WRAP);
@@ -741,9 +700,6 @@ public class Utils {
      */
     private Utils() {
     }
-
-
-
 
     /**
      * Returns the screen/display size.

@@ -48,6 +48,16 @@ public class MainFragment extends BrowseSupportFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (ActivityCompat.checkSelfPermission(
+                    getContext(),
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        PERMISSION_REQUEST_WRITE_STORAGE);
+            }
+        }
+
         mBackgroundManager = BackgroundManager.getInstance(getActivity());
         setupLeanbackElements();
 
@@ -60,23 +70,14 @@ public class MainFragment extends BrowseSupportFragment {
         prepareEntranceTransition();
         loadData();
         startEntranceTransition();
-        showStartupMessage();
-        startUpdateTask();
+        // showStartupMessage();
+        // startUpdateTask();
     }
 
     @Override
     public void onStart() {
-        super.onStart();
         Utils.disposedServices();
-        if (Build.VERSION.SDK_INT >= 23) {
-            if (ActivityCompat.checkSelfPermission(
-                    getContext(),
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(
-                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                        PERMISSION_REQUEST_WRITE_STORAGE);
-            }
-        }
+        super.onStart();
     }
 
     @Override
