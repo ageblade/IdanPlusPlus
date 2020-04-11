@@ -1,18 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-     Copyright (C) 2014 The Android Open Source Project
-
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
--->
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.idan.plusplus">
@@ -48,7 +34,7 @@
 
 
     <application
-        android:name=".app"
+        android:name=".MyApplication"
         android:allowBackup="false"
         android:banner="@drawable/logo_new"
         android:icon="@drawable/app_icon_quantum"
@@ -61,7 +47,9 @@
         tools:replace="android:allowBackup,android:appComponentFactory"
         android:launchMode="singleInstance"
         android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|layoutDirection"
-        android:appComponentFactory="whateverString">
+        android:appComponentFactory="whateverString"
+        android:networkSecurityConfig="@xml/network_security_config">
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.updateProvider"
@@ -71,9 +59,11 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_update_provider" />
         </provider>
+
         <meta-data
             android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
             android:value="com.example.idan.plusplus.Support.CastOptionsProvider" />
+
         <activity
             android:name=".ui.MainActivity"
             android:icon="@drawable/logo_new"

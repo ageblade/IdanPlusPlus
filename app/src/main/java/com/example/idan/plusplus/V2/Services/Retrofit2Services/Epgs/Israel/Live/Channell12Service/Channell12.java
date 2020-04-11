@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentActivity;
 import com.example.idan.plusplus.Classes.KeshetAkamiTokenResponse;
 import com.example.idan.plusplus.V2.Events.OnAsyncTaskLoadCompletes;
 import com.example.idan.plusplus.V2.Services.Retrofit2Services.BaseAbstractService;
-import com.example.idan.plusplus.app;
+import com.example.idan.plusplus.MyApplication;
 import com.example.idan.plusplus.model.GridItem;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -24,7 +24,7 @@ public class Channell12 extends BaseAbstractService {
     private GridItem localGridItem;
 
     public Channell12(SharedPreferences sharedPreferences,OnAsyncTaskLoadCompletes completeCallback) {
-        super(app.getsRetrofitServices().getChannell12Service(),sharedPreferences,completeCallback);
+        super(MyApplication.getsRetrofitServices().getChannell12Service(),sharedPreferences,completeCallback);
     }
 
     //region Live Channell 12

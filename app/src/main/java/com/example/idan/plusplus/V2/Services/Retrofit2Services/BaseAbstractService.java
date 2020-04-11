@@ -11,7 +11,7 @@ import com.example.idan.plusplus.Utils;
 import com.example.idan.plusplus.V2.App.AppCommon;
 import com.example.idan.plusplus.V2.App.WebapiSingleton;
 import com.example.idan.plusplus.V2.Events.OnAsyncTaskLoadCompletes;
-import com.example.idan.plusplus.app;
+import com.example.idan.plusplus.MyApplication;
 import com.example.idan.plusplus.model.GridItem;
 import com.example.idan.plusplus.ui.SpinnerFragment;
 import com.google.gson.JsonArray;
@@ -53,7 +53,7 @@ public abstract class BaseAbstractService {
         disposed();
         clearHeaders();
         WebapiSingleton.clearCookieJar();
-        generalService = app.getsRetrofitServices().getGeneralService();
+        generalService = MyApplication.getsRetrofitServices().getGeneralService();
         RxJavaPlugins.setErrorHandler(e -> {
             Log.i("IDAN_APP_ERROR",e.getMessage());
             e.printStackTrace();

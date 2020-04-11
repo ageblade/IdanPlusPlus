@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name"><![CDATA[Idan Plus Plus]]></string>
-    <string name="browse_title"><![CDATA[Idan Plus Plus]]></string>
 
+    <string name="browse_title"><![CDATA[Idan Plus Plus]]></string>
     <string name="dobule_press_back">Press back again to exit</string>
+    <string name="permission_denied_write_storage">The app was not allowed to write in your storage</string>
 
     <string name="header_icon">Header icon</string>
     <string name="playback_tag">PLAYBACK_TAG</string>

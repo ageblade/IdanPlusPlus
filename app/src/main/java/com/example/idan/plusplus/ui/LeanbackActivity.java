@@ -7,7 +7,7 @@ import android.view.Window;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentActivity;
 
-import com.example.idan.plusplus.app;
+import com.example.idan.plusplus.MyApplication;
 
 /**
  * This parent class contains common methods that run in every activity such as search_vod.
@@ -26,7 +26,7 @@ public abstract class LeanbackActivity extends FragmentActivity {
 
     @Override
     protected void attachBaseContext(Context base) {
-        super.attachBaseContext(app.localeManager.setLocale(base));
+        super.attachBaseContext(MyApplication.localeManager.setLocale(base));
     }
 
 

@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends LeanbackActivity {
     public boolean mBackPressedOnce = false;
-    public SpinnerFragment mSpinnerFragment = new SpinnerFragment();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
